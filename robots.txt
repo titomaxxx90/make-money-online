@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://titomaxxx90.github.io/istoriya/sitemap.xml
