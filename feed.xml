@@ -3,7 +3,7 @@
     <title>История с помехой</title>
     <link href="https://titomaxxx90.github.io/make-money-online/feed.xml" rel="self" />
     <link href="https://titomaxxx90.github.io/make-money-online" />
-    <updated>2026-03-10T11:28:27+05:00</updated>
+    <updated>2026-03-10T12:59:41+05:00</updated>
     <author>
         <name>Максим Прохоров</name>
     </author>
@@ -22,23 +22,23 @@
             <summary type="html">
                 <![CDATA[
                         <img src="https://titomaxxx90.github.io/make-money-online/media/posts/4/Gemini_Generated_Image_prujyjprujyjpruj.png" alt="" />
-                    Шаг 1: Выяснение требований Чтобы написать идеальный код, мне нужно задать тебе несколько уточняющих вопросов (ты можешь ответить на них позже, а пока я предложу базовый вариант): Стек технологий: Тебе комфортнее работать с современным фреймворком вроде React (он идеально подходит для таких форм и переключений) или лучше сделать все на&hellip;
+                    Шаг 1: Выяснение требований Чтобы написать идеальный код, нам нужно: Стек технологий: комфортнее работать с современным фреймворком вроде React (он идеально подходит для таких форм и переключений) В своем решении ниже я буду использовать React, так как он лучше всего подходит для поставленных задач. База данных: аккаунт в Supabase Специфика&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
                     <p><img src="https://titomaxxx90.github.io/make-money-online/media/posts/4/Gemini_Generated_Image_prujyjprujyjpruj.png" class="type:primaryImage" alt="" /></p>
                 <h3 data-path-to-node="3">Шаг 1: Выяснение требований</h3>
-<p data-path-to-node="4">Чтобы написать идеальный код, мне нужно задать тебе несколько уточняющих вопросов (ты можешь ответить на них позже, а пока я предложу базовый вариант):</p>
+<p data-path-to-node="4">Чтобы написать идеальный код, нам нужно:</p>
 <ol start="1" data-path-to-node="5">
 <li>
-<p data-path-to-node="5,0,0"><strong data-path-to-node="5,0,0" data-index-in-node="0">Стек технологий:</strong> Тебе комфортнее работать с современным фреймворком вроде <strong data-path-to-node="5,0,0" data-index-in-node="74">React</strong> (он идеально подходит для таких форм и переключений) или лучше сделать все на чистом <strong data-path-to-node="5,0,0" data-index-in-node="165">HTML/JavaScript</strong>? <i data-path-to-node="5,0,0" data-index-in-node="182">В своем решении ниже я буду использовать React, так как он лучше всего подходит для твоих задач.</i></p>
+<p data-path-to-node="5,0,0"><strong data-path-to-node="5,0,0" data-index-in-node="0">Стек технологий:</strong>  комфортнее работать с современным фреймворком вроде <strong data-path-to-node="5,0,0" data-index-in-node="74">React</strong> (он идеально подходит для таких форм и переключений)  <i data-path-to-node="5,0,0" data-index-in-node="182">В своем решении ниже я буду использовать React, так как он лучше всего подходит для поставленных задач.</i></p>
 </li>
 <li>
-<p data-path-to-node="5,1,0"><strong data-path-to-node="5,1,0" data-index-in-node="0">База данных:</strong> У тебя уже есть аккаунт в Supabase и созданный там проект?</p>
+<p data-path-to-node="5,1,0"><strong data-path-to-node="5,1,0" data-index-in-node="0">База данных:</strong>  аккаунт в Supabase </p>
 </li>
 <li>
-<p data-path-to-node="5,2,0"><strong data-path-to-node="5,2,0" data-index-in-node="0">Специфика стран:</strong> Для разных стран (РФ, РК, РБ, КР) формы сильно отличаются. Есть ли у тебя образцы или списки обязательных полей для каждой страны? (Например, в РФ нужен ИНН/КПП, а в РК — БИН/ИИН и КБЕ).</p>
+<p data-path-to-node="5,2,0"><strong data-path-to-node="5,2,0" data-index-in-node="0">Специфика стран:</strong> Для разных стран (РФ, РК, РБ, КР) формы сильно отличаются. Ищем образцы или списки обязательных полей для каждой страны. (Например, в РФ нужен ИНН/КПП, а в РК — БИН/ИИН и КБЕ).</p>
 </li>
 </ol>
 <h3 data-path-to-node="6">Шаг 2: Описание решения</h3>
@@ -242,6 +242,8 @@
 <p data-path-to-node="28,3,0"><strong data-path-to-node="28,3,0" data-index-in-node="0">Подготовка базы данных:</strong> В панели Supabase создай новую таблицу с названием <code data-path-to-node="28,3,0" data-index-in-node="75">invoices</code>. Добавь в неё колонки: <code data-path-to-node="28,3,0" data-index-in-node="107">id</code> (уже есть), <code data-path-to-node="28,3,0" data-index-in-node="122">user_id</code> (uuid), <code data-path-to-node="28,3,0" data-index-in-node="138">country</code> (text), <code data-path-to-node="28,3,0" data-index-in-node="154">client_name</code> (text), <code data-path-to-node="28,3,0" data-index-in-node="174">amount</code> (numeric), <code data-path-to-node="28,3,0" data-index-in-node="192">details</code> (jsonb).</p>
 </li>
 </ol>
+<p> </p>
+<p>Это лишь пример того как можно реализовать функциональный SaaS проект. В создании статьи я использовал популярные бесплатные сервисы. Далее расскажу про дешевые домены, как их подключать, как получать трафик, про монетезацию. Весь путь и поиски я провожу сам, учусь в процессе, веду блог. Удачи, если заинтересовал - создавайте, масштабируйте, зарабатывате.</p>
             ]]>
         </content>
     </entry>
