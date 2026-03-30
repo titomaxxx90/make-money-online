@@ -3,12 +3,57 @@
     <title>История с помехой</title>
     <link href="https://titomaxxx90.github.io/make-money-online/feed.xml" rel="self" />
     <link href="https://titomaxxx90.github.io/make-money-online" />
-    <updated>2026-03-11T15:29:51+05:00</updated>
+    <updated>2026-03-30T14:21:42+05:00</updated>
     <author>
         <name>Максим Прохоров</name>
     </author>
     <id>https://titomaxxx90.github.io/make-money-online</id>
 
+    <entry>
+        <title>Как я заставил код вести TikTok: Автоматизация, трафик и проект «Кабан знает»</title>
+        <author>
+            <name>Максим Прохоров</name>
+        </author>
+        <link href="https://titomaxxx90.github.io/make-money-online/kak-ya-zastavil-kod-vesti-tiktok-avtomatizaciya-trafik-i-proekt-kaban-znaet.html"/>
+        <id>https://titomaxxx90.github.io/make-money-online/kak-ya-zastavil-kod-vesti-tiktok-avtomatizaciya-trafik-i-proekt-kaban-znaet.html</id>
+        <media:content url="https://titomaxxx90.github.io/make-money-online/media/posts/8/Gemini_Generated_Image_equjdbequjdbequj.png" medium="image" />
+
+        <updated>2026-03-30T14:21:42+05:00</updated>
+            <summary type="html">
+                <![CDATA[
+                        <img src="https://titomaxxx90.github.io/make-money-online/media/posts/8/Gemini_Generated_Image_equjdbequjdbequj.png" alt="" />
+                    Ведение социальных сетей — это рутина. Написание сценария, съемка, монтаж, публикация... А что, если поручить весь этот конвейер скриптам? Сегодня я расскажу, как полностью автоматизировать процесс создания и публикации контента в TikTok, превратив обычный канал в автономный актив. Сердце моей системы — это связка Python и Playwright. Если с Python&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://titomaxxx90.github.io/make-money-online/media/posts/8/Gemini_Generated_Image_equjdbequjdbequj.png" class="type:primaryImage" alt="" /></p>
+                <p>Ведение социальных сетей — это рутина. Написание сценария, съемка, монтаж, публикация... А что, если поручить весь этот конвейер скриптам? Сегодня я расскажу, как полностью автоматизировать процесс создания и публикации контента в TikTok, превратив обычный канал в автономный актив.</p>
+<h3 data-path-to-node="6">Стек технологий: почему Python и Playwright?</h3>
+<p data-path-to-node="7">Сердце моей системы — это связка Python и Playwright. Если с Python всё понятно, то выбор Playwright стоит объяснить отдельно.</p>
+<p data-path-to-node="8">Главная проблема автоматизации TikTok — агрессивная антибот-система. Playwright позволяет использовать постоянный профиль браузера. Это критически важно: сохранение сессий, куки-файлов и цифрового отпечатка помогает обходить детекты. Для алгоритмов TikTok скрипт выглядит как обычный пользователь, который просто регулярно заходит со своего устройства.</p>
+<h3 data-path-to-node="9">Архитектура: от идеи до поста каждые 6 часов</h3>
+<p data-path-to-node="10">Весь процесс работает как часы благодаря двум основным скриптам:</p>
+<p data-path-to-node="10"> </p>
+<ol start="1" data-path-to-node="11">
+<li>
+<p data-path-to-node="11,0,0"><strong data-path-to-node="11,0,0" data-index-in-node="0"><code data-path-to-node="11,0,0" data-index-in-node="0">creator.py</code></strong> — берет на себя самую тяжелую часть. Он отвечает за генерацию самого видеоролика, включая визуальную составляющую, текст и озвучку.</p>
+</li>
+<li>
+<p data-path-to-node="11,1,0"><strong data-path-to-node="11,1,0" data-index-in-node="0"><code data-path-to-node="11,1,0" data-index-in-node="0">uploader.py</code></strong> — перехватывает эстафету. Он открывает наш "прогретый" браузер, загружает готовый ролик, проставляет нужные теги и публикует его.</p>
+</li>
+</ol>
+<p data-path-to-node="12">Чтобы всё работало на абсолютном автопилоте, достаточно настроить планировщик задач Windows (Task Scheduler) на запуск <code data-path-to-node="12" data-index-in-node="119">.bat</code> файлов. В моем случае интервал составляет каждые 6 часов. Итог: 3-4 стабильных публикации в день вообще без моего участия.</p>
+<h3 data-path-to-node="13">Живой кейс: @kaban_znaet</h3>
+<p data-path-to-node="14">Теория — это отлично, но давайте посмотрим на практику. Вся эта система прямо сейчас успешно крутится на моем проекте — <strong data-path-to-node="14" data-index-in-node="120"><a _ngcontent-ng-c3235764698="" target="_blank" rel="noopener" externallink="" _nghost-ng-c1891340184="" jslog="197247;track:generic_click,impression,attention;BardVeMetadataKey:[[&quot;r_32772854eab3da46&quot;,&quot;c_ae4de901b28d11cf&quot;,null,&quot;rc_3d9669f97dbed254&quot;,null,null,&quot;ru&quot;,null,1,null,null,1,0]]" href="https://www.google.com/search?q=https://www.tiktok.com/%40kaban_znaet" class="ng-star-inserted" data-hveid="0" decode-data-ved="1" data-ved="0CAAQ_4QMahcKEwjY9ZC3pceTAxUAAAAAHQAAAAAQDw">@kaban_znaet</a></strong>.</p>
+<figure class="post__image"><img loading="lazy"  src="https://titomaxxx90.github.io/make-money-online/media/posts/8/Gemini_Generated_Image_equjdbequjdbequj-1-2.png" alt="" width="1408" height="768" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://titomaxxx90.github.io/make-money-online/media/posts/8/responsive/Gemini_Generated_Image_equjdbequjdbequj-1-2-xs.png 640w ,https://titomaxxx90.github.io/make-money-online/media/posts/8/responsive/Gemini_Generated_Image_equjdbequjdbequj-1-2-sm.png 768w ,https://titomaxxx90.github.io/make-money-online/media/posts/8/responsive/Gemini_Generated_Image_equjdbequjdbequj-1-2-md.png 1024w ,https://titomaxxx90.github.io/make-money-online/media/posts/8/responsive/Gemini_Generated_Image_equjdbequjdbequj-1-2-lg.png 1366w ,https://titomaxxx90.github.io/make-money-online/media/posts/8/responsive/Gemini_Generated_Image_equjdbequjdbequj-1-2-xl.png 1600w ,https://titomaxxx90.github.io/make-money-online/media/posts/8/responsive/Gemini_Generated_Image_equjdbequjdbequj-1-2-2xl.png 1920w"></figure>
+<p data-path-to-node="17">Канал работает в вечнозеленой нише "Мифы и Факты". Скрипты автоматически формируют заголовки и нумеруют выпуски в строгом формате, например: <i data-path-to-node="17" data-index-in-node="141">«МИФ и ФАКТ #42 / Кабан ЗНАЕТ»</i>. Это создает узнаваемый стиль, упорядочивает контент и отлично удерживает внимание аудитории.</p>
+<h3 data-path-to-node="18">Трафик как бизнес-актив</h3>
+<p data-path-to-node="19">Главная цель такой автоматизации — не просто сбор лайков. Это классический фарминг трафика. Готовый канал с лояльной аудиторией, который генерирует контент и не требует ежедневного ручного труда — это полноценный технологический бизнес-актив. Его можно монетизировать переливом аудитории, продажей рекламы или даже реализовать как готовый бизнес под ключ.</p>
+<p data-path-to-node="20">Автоматизируйте свою рутину. Когда написанный тобой код начинает приносить реальный трафик 24/7 — это чертовски приятное чувство.</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>5 Лучших инструментов для фрилансера на Kwork</title>
         <author>
