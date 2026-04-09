@@ -3,12 +3,105 @@
     <title>История с помехой</title>
     <link href="https://titomaxxx90.github.io/make-money-online/feed.xml" rel="self" />
     <link href="https://titomaxxx90.github.io/make-money-online" />
-    <updated>2026-03-31T14:29:24+05:00</updated>
+    <updated>2026-04-09T22:23:25+05:00</updated>
     <author>
         <name>Максим Прохоров</name>
     </author>
     <id>https://titomaxxx90.github.io/make-money-online</id>
 
+    <entry>
+        <title>Переезд Yii2 на новый VPS: Как я победил «админку» и 504 ошибку</title>
+        <author>
+            <name>Максим Прохоров</name>
+        </author>
+        <link href="https://titomaxxx90.github.io/make-money-online/pereezd-yii2-na-novyy-vps-kak-ya-pobedil-adminku-i-504-oshibku.html"/>
+        <id>https://titomaxxx90.github.io/make-money-online/pereezd-yii2-na-novyy-vps-kak-ya-pobedil-adminku-i-504-oshibku.html</id>
+        <media:content url="https://titomaxxx90.github.io/make-money-online/media/posts/9/Gemini_Generated_Image_5opmi55opmi55opm.png" medium="image" />
+
+        <updated>2026-04-09T22:23:25+05:00</updated>
+            <summary type="html">
+                <![CDATA[
+                        <img src="https://titomaxxx90.github.io/make-money-online/media/posts/9/Gemini_Generated_Image_5opmi55opmi55opm.png" alt="" />
+                    Переезд сайта — это не просто копирование файлов. Это всегда битва с окружением. Рассказываю, как я переносил проект «Находка» (Yii2 Advanced) на новый сервер с Docker и Portainer, и с какими «сюрпризами» столкнулся. На локальном сервере (Laragon) всё работало, а после деплоя на VPS по ссылке /admin вылетала 404. Причина:&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://titomaxxx90.github.io/make-money-online/media/posts/9/Gemini_Generated_Image_5opmi55opmi55opm.png" class="type:primaryImage" alt="" /></p>
+                <p data-path-to-node="3">Переезд сайта — это не просто копирование файлов. Это всегда битва с окружением. Рассказываю, как я переносил проект «Находка» (Yii2 Advanced) на новый сервер с Docker и Portainer, и с какими «сюрпризами» столкнулся.</p>
+<h2 data-path-to-node="4">Проблема №1: «Где моя админка?» (404 ошибка)</h2>
+<p data-path-to-node="5">На локальном сервере (Laragon) всё работало, а после деплоя на VPS по ссылке <code data-path-to-node="5" data-index-in-node="77">/admin</code> вылетала 404.</p>
+<p data-path-to-node="6"><strong data-path-to-node="6" data-index-in-node="0">Причина:</strong> В Yii2 Advanced папки <code data-path-to-node="6" data-index-in-node="31">frontend</code> и <code data-path-to-node="6" data-index-in-node="42">backend</code> живут отдельно. Чтобы админка открывалась по единому домену, нужно создать связь (симлинк) в корне фронтенда.</p>
+<p data-path-to-node="7"><strong data-path-to-node="7" data-index-in-node="0">Решение:</strong></p>
+<ol start="1" data-path-to-node="8">
+<li>
+<p data-path-to-node="8,0,0"><strong data-path-to-node="8,0,0" data-index-in-node="0">На Windows (Laragon):</strong> Запускаем терминал от админа и пробрасываем мост:</p>
+<div class="code-block ng-tns-c382649431-101 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation" data-hveid="5">
+<div class="code-block-decoration header-formatted gds-title-s ng-tns-c382649431-101 ng-star-inserted"><span class="ng-tns-c382649431-101">DOS</span>
+<div class="buttons ng-tns-c382649431-101 ng-star-inserted"> </div>
+</div>
+<div class="formatted-code-block-internal-container ng-tns-c382649431-101">
+<div class="animated-opacity ng-tns-c382649431-101">
+<pre class="ng-tns-c382649431-101"><code class="code-container formatted ng-tns-c382649431-101" role="text" data-test-id="code-content">mklink /D admin ..\..\backend\web
+</code></pre>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p data-path-to-node="8,1,0"><strong data-path-to-node="8,1,0" data-index-in-node="0">На Linux (VPS):</strong> Переходим в папку фронтенда и создаем мягкую ссылку:</p>
+<div class="code-block ng-tns-c382649431-102 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation" data-hveid="7">
+<div class="code-block-decoration header-formatted gds-title-s ng-tns-c382649431-102 ng-star-inserted"><span class="ng-tns-c382649431-102">Bash</span>
+<div class="buttons ng-tns-c382649431-102 ng-star-inserted"> </div>
+</div>
+<div class="formatted-code-block-internal-container ng-tns-c382649431-102">
+<div class="animated-opacity ng-tns-c382649431-102">
+<pre class="ng-tns-c382649431-102"><code class="code-container formatted ng-tns-c382649431-102" role="text" data-test-id="code-content">ln -s ../../backend/web admin
+</code></pre>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<h2 data-path-to-node="9">Проблема №2: Смертельное зависание (504 Gateway Timeout)</h2>
+<figure class="post__image"><img loading="lazy"  src="https://titomaxxx90.github.io/make-money-online/media/posts/9/Gemini_Generated_Image_5opmi55opmi55opm-1.png" alt="" width="1408" height="768" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://titomaxxx90.github.io/make-money-online/media/posts/9/responsive/Gemini_Generated_Image_5opmi55opmi55opm-1-xs.png 640w ,https://titomaxxx90.github.io/make-money-online/media/posts/9/responsive/Gemini_Generated_Image_5opmi55opmi55opm-1-sm.png 768w ,https://titomaxxx90.github.io/make-money-online/media/posts/9/responsive/Gemini_Generated_Image_5opmi55opmi55opm-1-md.png 1024w ,https://titomaxxx90.github.io/make-money-online/media/posts/9/responsive/Gemini_Generated_Image_5opmi55opmi55opm-1-lg.png 1366w ,https://titomaxxx90.github.io/make-money-online/media/posts/9/responsive/Gemini_Generated_Image_5opmi55opmi55opm-1-xl.png 1600w ,https://titomaxxx90.github.io/make-money-online/media/posts/9/responsive/Gemini_Generated_Image_5opmi55opmi55opm-1-2xl.png 1920w"></figure>
+<p data-path-to-node="10">При попытке отправить письмо через форму заказа админка «зависала» на минуту и выдавала 504 ошибку.</p>
+<p data-path-to-node="11"><strong data-path-to-node="11" data-index-in-node="0">Диагноз:</strong> PHP-скрипт пытался достучаться до SMTP-сервера (SendPulse/Yandex), но провайдер (в моем случае RU-CENTER) по умолчанию блокирует исходящие почтовые порты (465, 587, 25) на новых VPS для защиты от спама.</p>
+<p data-path-to-node="12"><strong data-path-to-node="12" data-index-in-node="0">Как я это проверил (100% способ):</strong> Вместо того чтобы гадать, я пропинговал порты прямо из Docker-контейнера:</p>
+<div class="code-block ng-tns-c382649431-103 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation" data-hveid="9">
+<div class="code-block-decoration header-formatted gds-title-s ng-tns-c382649431-103 ng-star-inserted"><span class="ng-tns-c382649431-103">Bash</span>
+<div class="buttons ng-tns-c382649431-103 ng-star-inserted"> </div>
+</div>
+<div class="formatted-code-block-internal-container ng-tns-c382649431-103">
+<div class="animated-opacity ng-tns-c382649431-103">
+<pre class="ng-tns-c382649431-103"><code class="code-container formatted ng-tns-c382649431-103" role="text" data-test-id="code-content">nc -zv smtp.yandex.ru 465
+</code></pre>
+</div>
+</div>
+</div>
+<p data-path-to-node="14">Результат <code data-path-to-node="14" data-index-in-node="10">Connection timed out</code> подтвердил — пакеты просто не выходят наружу.</p>
+<h2 data-path-to-node="15">Итог и чек-лист для переезда</h2>
+<p data-path-to-node="16">Если ваш сайт переезжает на новый VPS, делайте так:</p>
+<ol start="1" data-path-to-node="17">
+<li>
+<p data-path-to-node="17,0,0"><strong data-path-to-node="17,0,0" data-index-in-node="0">Проверяйте привилегии:</strong> При создании симлинков на Windows всегда запускайте софт от имени администратора.</p>
+</li>
+<li>
+<p data-path-to-node="17,1,0"><strong data-path-to-node="17,1,0" data-index-in-node="0">Тестируйте порты сразу:</strong> Если есть формы обратной связи, проверьте порты 465 и 587 через <code data-path-to-node="17,1,0" data-index-in-node="88">nc</code> или <code data-path-to-node="17,1,0" data-index-in-node="95">telnet</code>.</p>
+</li>
+<li>
+<p data-path-to-node="17,2,0"><strong data-path-to-node="17,2,0" data-index-in-node="0">Не мучайте код:</strong> Если порт закрыт на уровне провайдера, никакие правки в PHP не помогут. Пишите в саппорт хостинга или ищите «открытые» порты (например, 2525).</p>
+</li>
+</ol>
+<p data-path-to-node="18"><strong data-path-to-node="18" data-index-in-node="0">Результат:</strong> Сайт летает, админка доступна, а вопрос с почтой теперь решается на уровне магистрали провайдера, а не костылями в коде.</p>
+<hr data-path-to-node="19">
+<h3 data-path-to-node="20">Одной фразой для соцсетей:</h3>
+<blockquote data-path-to-node="21">
+<p data-path-to-node="21,0">«Симлинки — для структуры, техподдержка — для почты. Переезд Yii2 завершен успешно.»</p>
+</blockquote>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Как я заставил код вести TikTok: Автоматизация, трафик и проект «Кабан знает»</title>
         <author>
