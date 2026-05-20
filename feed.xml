@@ -3,12 +3,91 @@
     <title>История с помехой</title>
     <link href="https://titomaxxx90.github.io/make-money-online/feed.xml" rel="self" />
     <link href="https://titomaxxx90.github.io/make-money-online" />
-    <updated>2026-05-04T23:59:11+05:00</updated>
+    <updated>2026-05-20T16:03:05+06:00</updated>
     <author>
         <name>Максим Прохоров</name>
     </author>
     <id>https://titomaxxx90.github.io/make-money-online</id>
 
+    <entry>
+        <title>Переход на Rutube в WordPress: как реализовать гибкую интеграцию видео через ACF</title>
+        <author>
+            <name>Максим Прохоров</name>
+        </author>
+        <link href="https://titomaxxx90.github.io/make-money-online/perehod-na-rutube-v-wordpress-kak-realizovat-gibkuyu-integraciyu-video-cherez-acf.html"/>
+        <id>https://titomaxxx90.github.io/make-money-online/perehod-na-rutube-v-wordpress-kak-realizovat-gibkuyu-integraciyu-video-cherez-acf.html</id>
+        <media:content url="https://titomaxxx90.github.io/make-money-online/media/posts/11/Gemini_Generated_Image_38f0xs38f0xs38f0.png" medium="image" />
+
+        <updated>2026-05-20T16:03:05+06:00</updated>
+            <summary type="html">
+                <![CDATA[
+                        <img src="https://titomaxxx90.github.io/make-money-online/media/posts/11/Gemini_Generated_Image_38f0xs38f0xs38f0.png" alt="" />
+                    В эпоху импортозамещения и изменения ландшафта видеохостингов, многие владельцы сайтов на WordPress сталкиваются с необходимостью адаптации контента. Переход с YouTube на Rutube требует не просто смены ссылок, а грамотной технической реализации на стороне темы, чтобы сайт не «тормозил» и оставался удобным для пользователей. В этой статье разберем, как мы решили&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://titomaxxx90.github.io/make-money-online/media/posts/11/Gemini_Generated_Image_38f0xs38f0xs38f0.png" class="type:primaryImage" alt="" /></p>
+                <p data-path-to-node="3">В эпоху импортозамещения и изменения ландшафта видеохостингов, многие владельцы сайтов на WordPress сталкиваются с необходимостью адаптации контента. Переход с YouTube на Rutube требует не просто смены ссылок, а грамотной технической реализации на стороне темы, чтобы сайт не «тормозил» и оставался удобным для пользователей.</p>
+<p data-path-to-node="4">В этой статье разберем, как мы решили эту задачу, используя связку <strong data-path-to-node="4" data-index-in-node="67">Advanced Custom Fields (ACF)</strong> и нативный JavaScript.</p>
+<h2 data-path-to-node="5">Проблема: почему стандартный <code data-path-to-node="5" data-index-in-node="29">oEmbed</code> не всегда подходит?</h2>
+<p data-path-to-node="6">Стандартный механизм WordPress (oEmbed) отлично работает с YouTube, но при вставке Rutube часто возникают проблемы с адаптивностью, отсутствием кастомных превью или нежелательным автовоспроизведением. Нам нужно было решение, которое:</p>
+<ol start="1" data-path-to-node="7">
+<li>
+<p data-path-to-node="7,0,0"><strong data-path-to-node="7,0,0" data-index-in-node="0">Не грузит плеер до клика</strong> (экономим трафик пользователя).</p>
+</li>
+<li>
+<p data-path-to-node="7,1,0"><strong data-path-to-node="7,1,0" data-index-in-node="0">Позволяет ставить свои картинки-обложки</strong> через админку.</p>
+</li>
+<li>
+<p data-path-to-node="7,2,0"><strong data-path-to-node="7,2,0" data-index-in-node="0">Имеет единый стиль</strong> для всех видео-блоков на лендинге.</p>
+</li>
+</ol>
+<h2 data-path-to-node="8">Наше решение: ACF Flexible Content + Ленивая загрузка</h2>
+<p data-path-to-node="9">Мы отказались от сторонних плагинов и написали собственное решение, интегрированное в структуру <code data-path-to-node="9" data-index-in-node="96">Flexible Content</code> (гибкое содержание) темы.</p>
+<h3 data-path-to-node="10">1. Подготовка структуры в ACF</h3>
+<p data-path-to-node="11">Мы создали группу полей, где администратор может выбрать:</p>
+<ul data-path-to-node="12">
+<li>
+<p data-path-to-node="12,0,0">Ссылку на видео (Rutube URL).</p>
+</li>
+<li>
+<p data-path-to-node="12,1,0">Картинку-превью (для красивой обложки).</p>
+</li>
+</ul>
+<h3 data-path-to-node="13">2. Реализация вывода (PHP)</h3>
+<p data-path-to-node="14">В файле <code data-path-to-node="14" data-index-in-node="8">land.php</code> мы перехватываем вывод стандартного блока и подменяем его на наш контейнер с данными:</p>
+<p data-path-to-node="14">&lt;section class="video-block" id="videob"&gt;<br>    &lt;div class="wrapper"&gt;<br>        &lt;div class="video-block__container" data-video-id="&lt;?php echo esc_attr( $video_id ); ?&gt;"&gt;<br>            &lt;img src="&lt;?php echo esc_url( $poster_url ); ?&gt;" alt="Превью видео"&gt;<br>            &lt;div class="video-block__btn video-btn" data-play-btn&gt;&lt;/div&gt;<br>        &lt;/div&gt;<br>    &lt;/div&gt;<br>&lt;/section&gt;</p>
+<h3 data-path-to-node="16">3. Магия JavaScript</h3>
+<p data-path-to-node="17">Самое интересное происходит при клике на кнопку. Мы используем <code data-path-to-node="17" data-index-in-node="63">postMessage</code> для управления плеером, что делает взаимодействие с Rutube максимально плавным.</p>
+<blockquote data-path-to-node="18">
+<p data-path-to-node="18,0"><strong data-path-to-node="18,0" data-index-in-node="0">Важная заметка:</strong> При реализации обязательно используйте <code data-path-to-node="18,0" data-index-in-node="55">e.stopPropagation()</code>, чтобы событие клика не «всплывало» и не вызывало конфликтов со слайдерами (например, Swiper), если видео находится внутри них.</p>
+</blockquote>
+<h2 data-path-to-node="20">Рекомендуемые практики при интеграции</h2>
+<ul data-path-to-node="21">
+<li>
+<p data-path-to-node="21,0,0"><strong data-path-to-node="21,0,0" data-index-in-node="0">Ограничение ширины:</strong> Используйте CSS-класс <code data-path-to-node="21,0,0" data-index-in-node="42">.wrapper</code>, который уже задан в вашей теме. Это избавит от проблем с «разъезжающейся» версткой на широких мониторах.</p>
+</li>
+<li>
+<p data-path-to-node="21,1,0"><strong data-path-to-node="21,1,0" data-index-in-node="0">Безопасность:</strong> Проверяйте входящие данные функции <code data-path-to-node="21,1,0" data-index-in-node="49">sd_get_rutube_video_id</code> с помощью регулярных выражений, чтобы в базу не попадали некорректные ссылки.</p>
+</li>
+<li>
+<p data-path-to-node="21,2,0"><strong data-path-to-node="21,2,0" data-index-in-node="0">Performance:</strong> Обязательно добавляйте атрибут <code data-path-to-node="21,2,0" data-index-in-node="44">loading="lazy"</code> для картинок-обложек, если видео находится далеко внизу лендинга.</p>
+</li>
+</ul>
+<h3 data-path-to-node="27">Полезные ссылки:</h3>
+<ul data-path-to-node="28">
+<li>
+<p data-path-to-node="28,0,0"><a _ngcontent-ng-c776330861="" target="_blank" rel="noopener" externallink="" _nghost-ng-c2729141691="" jslog="197247;track:generic_click,impression,attention;BardVeMetadataKey:[[&quot;r_f30944842bc67365&quot;,&quot;c_01f3e4c65be157d8&quot;,null,&quot;rc_e7aaf54fd76e1902&quot;,null,null,&quot;ru&quot;,null,1,null,null,1,0]]" href="https://rutube.ru/" class="ng-star-inserted" data-hveid="0" decode-data-ved="1" data-ved="0CAAQ_4QMahgKEwjElsjmsMeUAxUAAAAAHQAAAAAQmQU">Документация Rutube по встраиванию (Embed)</a> — официальный источник для API параметров.</p>
+</li>
+<li>
+<p data-path-to-node="28,1,0"><a _ngcontent-ng-c776330861="" target="_blank" rel="noopener" externallink="" _nghost-ng-c2729141691="" jslog="197247;track:generic_click,impression,attention;BardVeMetadataKey:[[&quot;r_f30944842bc67365&quot;,&quot;c_01f3e4c65be157d8&quot;,null,&quot;rc_e7aaf54fd76e1902&quot;,null,null,&quot;ru&quot;,null,1,null,null,1,0]]" href="https://www.advancedcustomfields.com/resources/" class="ng-star-inserted" data-hveid="0" decode-data-ved="1" data-ved="0CAAQ_4QMahgKEwjElsjmsMeUAxUAAAAAHQAAAAAQmgU">Документация ACF</a> — база знаний по работе с полями.</p>
+</li>
+</ul>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Как я собрал автономного робота-переводчика для Instructables (и сделал свой сайт живым)</title>
         <author>
@@ -18,7 +97,7 @@
         <id>https://titomaxxx90.github.io/make-money-online/kak-ya-sobral-avtonomnogo-robota-perevodchika-dlya-instructables-i-sdelal-svoy-sayt-zhivym.html</id>
         <media:content url="https://titomaxxx90.github.io/make-money-online/media/posts/10/Gemini_Generated_Image_rl15kprl15kprl15.png" medium="image" />
 
-        <updated>2026-05-04T23:59:11+05:00</updated>
+        <updated>2026-05-05T00:59:11+06:00</updated>
             <summary type="html">
                 <![CDATA[
                         <img src="https://titomaxxx90.github.io/make-money-online/media/posts/10/Gemini_Generated_Image_rl15kprl15kprl15.png" alt="" />
@@ -77,7 +156,7 @@
         <id>https://titomaxxx90.github.io/make-money-online/pereezd-yii2-na-novyy-vps-kak-ya-pobedil-adminku-i-504-oshibku.html</id>
         <media:content url="https://titomaxxx90.github.io/make-money-online/media/posts/9/Gemini_Generated_Image_5opmi55opmi55opm.png" medium="image" />
 
-        <updated>2026-04-09T22:23:25+05:00</updated>
+        <updated>2026-04-09T23:23:25+06:00</updated>
             <summary type="html">
                 <![CDATA[
                         <img src="https://titomaxxx90.github.io/make-money-online/media/posts/9/Gemini_Generated_Image_5opmi55opmi55opm.png" alt="" />
@@ -170,7 +249,7 @@
         <id>https://titomaxxx90.github.io/make-money-online/kak-ya-zastavil-kod-vesti-tiktok-avtomatizaciya-trafik-i-proekt-kaban-znaet.html</id>
         <media:content url="https://titomaxxx90.github.io/make-money-online/media/posts/8/Gemini_Generated_Image_equjdbequjdbequj.png" medium="image" />
 
-        <updated>2026-03-30T14:21:42+05:00</updated>
+        <updated>2026-03-30T15:21:42+06:00</updated>
             <summary type="html">
                 <![CDATA[
                         <img src="https://titomaxxx90.github.io/make-money-online/media/posts/8/Gemini_Generated_Image_equjdbequjdbequj.png" alt="" />
@@ -215,7 +294,7 @@
         <id>https://titomaxxx90.github.io/make-money-online/5-luchshih-instrumentov-dlya-frilansera-na-kwork.html</id>
         <media:content url="https://titomaxxx90.github.io/make-money-online/media/posts/7/Gemini_Generated_Image_zfmxkszfmxkszfmx.png" medium="image" />
 
-        <updated>2026-03-11T15:29:12+05:00</updated>
+        <updated>2026-03-11T16:29:12+06:00</updated>
             <summary type="html">
                 <![CDATA[
                         <img src="https://titomaxxx90.github.io/make-money-online/media/posts/7/Gemini_Generated_Image_zfmxkszfmxkszfmx.png" alt="" />
@@ -304,7 +383,7 @@
         <id>https://titomaxxx90.github.io/make-money-online/kak-ya-stroil-generator-schetov-ili-pochemu-neyroseti-eto-ne-volshebnaya-knopka.html</id>
         <media:content url="https://titomaxxx90.github.io/make-money-online/media/posts/6/DeepSeek.PNG" medium="image" />
 
-        <updated>2026-03-11T14:30:30+05:00</updated>
+        <updated>2026-03-11T15:30:30+06:00</updated>
             <summary type="html">
                 <![CDATA[
                         <img src="https://titomaxxx90.github.io/make-money-online/media/posts/6/DeepSeek.PNG" alt="" />
@@ -362,7 +441,7 @@
         <id>https://titomaxxx90.github.io/make-money-online/saas-na-githab-pages-ispolzuem-gemini.html</id>
         <media:content url="https://titomaxxx90.github.io/make-money-online/media/posts/5/SaaS2.PNG" medium="image" />
 
-        <updated>2026-03-11T00:05:55+05:00</updated>
+        <updated>2026-03-11T01:05:55+06:00</updated>
             <summary type="html">
                 <![CDATA[
                         <img src="https://titomaxxx90.github.io/make-money-online/media/posts/5/SaaS2.PNG" alt="" />
@@ -457,7 +536,7 @@
         <id>https://titomaxxx90.github.io/make-money-online/budem-saas-na-github-pages.html</id>
         <media:content url="https://titomaxxx90.github.io/make-money-online/media/posts/4/Gemini_Generated_Image_prujyjprujyjpruj.png" medium="image" />
 
-        <updated>2026-03-10T11:28:05+05:00</updated>
+        <updated>2026-03-10T12:28:05+06:00</updated>
             <summary type="html">
                 <![CDATA[
                         <img src="https://titomaxxx90.github.io/make-money-online/media/posts/4/Gemini_Generated_Image_prujyjprujyjpruj.png" alt="" />
@@ -695,7 +774,7 @@
         <id>https://titomaxxx90.github.io/make-money-online/publii-udobnaya-zamena-wordpress-dlya-vedeniya-bloga.html</id>
         <media:content url="https://titomaxxx90.github.io/make-money-online/media/posts/3/Snimok.PNG" medium="image" />
 
-        <updated>2026-03-07T17:45:25+05:00</updated>
+        <updated>2026-03-07T18:45:25+06:00</updated>
             <summary type="html">
                 <![CDATA[
                         <img src="https://titomaxxx90.github.io/make-money-online/media/posts/3/Snimok.PNG" alt="" />
@@ -807,7 +886,7 @@
         <id>https://titomaxxx90.github.io/make-money-online/ya-i-kwork-frilans-v-35-ili-ishchem-dengi-onlayn.html</id>
         <media:content url="https://titomaxxx90.github.io/make-money-online/media/posts/1/c203330d-debc-455e-9faf-12140e266d69.png" medium="image" />
 
-        <updated>2026-03-05T22:33:34+05:00</updated>
+        <updated>2026-03-05T23:33:34+06:00</updated>
             <summary type="html">
                 <![CDATA[
                         <img src="https://titomaxxx90.github.io/make-money-online/media/posts/1/c203330d-debc-455e-9faf-12140e266d69.png" alt="" />
