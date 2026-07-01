@@ -3,12 +3,112 @@
     <title>История с помехой</title>
     <link href="https://titomaxxx90.github.io/make-money-online/feed.xml" rel="self" />
     <link href="https://titomaxxx90.github.io/make-money-online" />
-    <updated>2026-05-20T16:03:05+06:00</updated>
+    <updated>2026-07-01T14:57:58+06:00</updated>
     <author>
         <name>Максим Прохоров</name>
     </author>
     <id>https://titomaxxx90.github.io/make-money-online</id>
 
+    <entry>
+        <title>От наследия к прогрессу: Как переехать с устаревшей CMS на современный WordPress</title>
+        <author>
+            <name>Максим Прохоров</name>
+        </author>
+        <link href="https://titomaxxx90.github.io/make-money-online/ot-naslediya-k-progressu-kak-pereehat-s-ustarevshey-cms-na-sovremennyy-wordpress.html"/>
+        <id>https://titomaxxx90.github.io/make-money-online/ot-naslediya-k-progressu-kak-pereehat-s-ustarevshey-cms-na-sovremennyy-wordpress.html</id>
+        <media:content url="https://titomaxxx90.github.io/make-money-online/media/posts/12/Snimok.JPG" medium="image" />
+
+        <updated>2026-07-01T14:57:58+06:00</updated>
+            <summary type="html">
+                <![CDATA[
+                        <img src="https://titomaxxx90.github.io/make-money-online/media/posts/12/Snimok.JPG" alt="" />
+                    Запуск нового сайта часто начинается не с чистого листа, а с «археологических раскопок». Когда у тебя в базе данных 106 таблиц, оставшихся от самописной или устаревшей CMS, возникает два чувства: азарт разработчика и тихий ужас от объема накопленного технического долга. Сегодня мы поговорим о том, как безболезненно перенести проект (в&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://titomaxxx90.github.io/make-money-online/media/posts/12/Snimok.JPG" class="type:primaryImage" alt="" /></p>
+                <p lang="zxx">Запуск нового сайта часто начинается не с чистого листа, а с «археологических раскопок». Когда у тебя в базе данных 106 таблиц, оставшихся от самописной или устаревшей CMS, возникает два чувства: азарт разработчика и тихий ужас от объема накопленного технического долга.</p>
+<p lang="zxx">Сегодня мы поговорим о том, как безболезненно перенести проект (в моем случае — <code>fastens</code>) на WordPress, и почему это решение — лучший подарок, который вы можете сделать своему бизнесу и нервной системе.</p>
+<h2 lang="zxx">Почему мы вообще бежим с «самописа»?</h2>
+<p lang="zxx">Старые CMS часто напоминают заброшенные города. Вроде бы всё работает, но любое изменение структуры превращается в квест.</p>
+<ol>
+<li style="list-style-type: none;">
+<ol>
+<li> </li>
+</ol>
+</li>
+</ol>
+<p lang="zxx"><strong>Безопасность.</strong> Старые системы — это решето. WordPress, при всех его минусах, обладает огромным сообществом, которое латает дыры быстрее, чем хакеры их находят.</p>
+<ol>
+<li style="list-style-type: none;">
+<ol>
+<li> </li>
+</ol>
+</li>
+</ol>
+<p lang="zxx"><strong>Экосистема.</strong> Elementor, WooCommerce, WPCode — эти инструменты позволяют собирать функционал любой сложности за часы, а не за недели кодинга.</p>
+<ol>
+<li style="list-style-type: none;">
+<ol>
+<li> </li>
+</ol>
+</li>
+</ol>
+<p lang="zxx"><strong>SEO.</strong> Поисковики любят современный, чистый код и предсказуемую структуру.</p>
+<h2 lang="zxx">Технический блиц: Стратегия миграции</h2>
+<p lang="zxx">Миграция — это не просто «копировать-вставить». Это процесс очистки данных.</p>
+<h3 lang="zxx">1. Не бойтесь соседства</h3>
+<p lang="zxx">Многие думают, что если база занята старыми данными, нужно её удалять. Ошибка. В WordPress есть такое понятие, как <strong>префикс таблиц</strong>. По умолчанию это <code>wp_</code>. Старые таблицы (даже если их больше сотни) с префиксами типа <code>cms_</code> спокойно живут в одной БД с Вордпрессом, не мешая ему ни на байт.</p>
+<h3 lang="zxx">2. Ловушка PHP: Версия имеет значение</h3>
+<p lang="zxx">Это самый критичный момент, на котором сыпятся новички. Если вы собрали сайт на PHP 8, а хостинг настойчиво держит вас на PHP 7 — ждите беды.</p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li> </li>
+</ul>
+</li>
+</ul>
+<p lang="zxx"><strong>Белый экран смерти (WSoD)</strong> — это чаще всего не поломка движка, а конфликт версий. Современные плагины (WooCommerce, Elementor) используют синтаксис PHP 8+. Запуск этого кода на «семерке» вызывает фатальные ошибки, которые сервер порой даже не успевает логировать.</p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li> </li>
+</ul>
+</li>
+</ul>
+<p lang="zxx"><strong>Совет:</strong> Перед миграцией убедитесь, что хостинг поддерживает PHP 8.1 или 8.2. Не пытайтесь заставить современный Вордпресс работать на устаревшем PHP — это всё равно что заливать низкооктановый бензин в спорткар.</p>
+<h3 lang="zxx">3. Инструментарий профессионала</h3>
+<p lang="zxx">Для миграции я использую комбинацию консоли (WP-CLI) и плагина <strong>All-in-One WP Migration</strong>.</p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li> </li>
+</ul>
+</li>
+</ul>
+<p lang="zxx"><strong>WP-CLI</strong> позволяет мгновенно настроить конфиг, сменить почту администратора или поставить плагины без захода в панель управления.</p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li> </li>
+</ul>
+</li>
+</ul>
+<p lang="zxx"><strong>AIOWPM</strong> — это золотой стандарт. Даже если у вас огромные файлы, через консоль SSH их можно закинуть в папку <code>ai1wm-backups/</code> и запустить процесс восстановления напрямую.</p>
+<h2 lang="zxx">Как не сломать всё в процессе?</h2>
+<p lang="zxx">Если при открытии сайта вы видите белый экран — не паникуйте. WordPress умеет «разговаривать». Добавьте в ваш <code>wp-config.php</code> эти строки:</p>
+<p lang="zxx">PHP</p>
+<pre lang="zxx"><code>define( 'WP_DEBUG', true );</code> <span lang="zxx"><code>define( 'WP_DEBUG_LOG', true );</code></span> <span lang="zxx"><code>define( 'WP_DEBUG_DISPLAY', false );</code></span></pre>
+<p lang="zxx">После этого файл <code>wp-content/debug.log</code> покажет вам «имя убийцы» — конкретный плагин или функцию, из-за которой всё упало. Исправить это проще, чем искать иголку в стоге сена.</p>
+<h2 lang="zxx">Итог</h2>
+<p lang="zxx">Переезд на WordPress — это освобождение. Да, придется попотеть с настройкой, побороться с правами доступа к файлам и версиями PHP. Но на выходе вы получаете мощную, гибкую платформу, которую можно масштабировать до бесконечности.</p>
+<p lang="zxx">Ваш сайт — это ваш цифровой актив. Не позволяйте ему пылиться в «старом городе» из устаревшего кода.</p>
+<p lang="zxx">Результат: <a href="https://fastens.ru">https://fastens.ru</a><br><br></p>
+<figure class="post__image"><img loading="lazy"  src="https://titomaxxx90.github.io/make-money-online/media/posts/12/Snimok2.JPG" alt="" width="1323" height="699" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://titomaxxx90.github.io/make-money-online/media/posts/12/responsive/Snimok2-xs.JPG 640w ,https://titomaxxx90.github.io/make-money-online/media/posts/12/responsive/Snimok2-sm.JPG 768w ,https://titomaxxx90.github.io/make-money-online/media/posts/12/responsive/Snimok2-md.JPG 1024w ,https://titomaxxx90.github.io/make-money-online/media/posts/12/responsive/Snimok2-lg.JPG 1366w ,https://titomaxxx90.github.io/make-money-online/media/posts/12/responsive/Snimok2-xl.JPG 1600w ,https://titomaxxx90.github.io/make-money-online/media/posts/12/responsive/Snimok2-2xl.JPG 1920w"></figure>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Переход на Rutube в WordPress: как реализовать гибкую интеграцию видео через ACF</title>
         <author>
@@ -874,83 +974,6 @@
 <h3 data-section-id="1mixtt8" data-start="2463" data-end="2477">Заключение</h3>
 <p data-start="2479" data-end="2725">Publii — отличное решение для тех, кто хочет быстро создать быстрый и безопасный сайт без сложной настройки сервера. Благодаря простому интерфейсу и поддержке современных технологий, эта система подходит как новичкам, так и опытным пользователям.</p>
 <p data-start="2727" data-end="2857" data-is-last-node="" data-is-only-node="">Если вы хотите запустить блог, информационный сайт или лендинг без сложного программирования, Publii может стать отличным выбором.</p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Я и Kwork. Фриланс в 35 или ищем деньги онлайн.</title>
-        <author>
-            <name>Максим Прохоров</name>
-        </author>
-        <link href="https://titomaxxx90.github.io/make-money-online/ya-i-kwork-frilans-v-35-ili-ishchem-dengi-onlayn.html"/>
-        <id>https://titomaxxx90.github.io/make-money-online/ya-i-kwork-frilans-v-35-ili-ishchem-dengi-onlayn.html</id>
-        <media:content url="https://titomaxxx90.github.io/make-money-online/media/posts/1/c203330d-debc-455e-9faf-12140e266d69.png" medium="image" />
-
-        <updated>2026-03-05T23:33:34+06:00</updated>
-            <summary type="html">
-                <![CDATA[
-                        <img src="https://titomaxxx90.github.io/make-money-online/media/posts/1/c203330d-debc-455e-9faf-12140e266d69.png" alt="" />
-                    ## Как я начал фриланс в 35 лет и вышел на первые заказы на WordPress В 35 лет я решил кардинально изменить подход к работе и попробовать себя во фрилансе. До этого был обычный опыт работы, но хотелось большей свободы, развития и возможности напрямую работать с клиентами. Я выбрал направление&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <p><img src="https://titomaxxx90.github.io/make-money-online/media/posts/1/c203330d-debc-455e-9faf-12140e266d69.png" class="type:primaryImage" alt="" /></p>
-                
-    <figure class="post__image post__image--center">
-      <img loading="lazy" src="https://titomaxxx90.github.io/make-money-online/media/posts/1/Kwork1.PNG" height="648" width="1304" alt=""  sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://titomaxxx90.github.io/make-money-online/media/posts/1/responsive/Kwork1-xs.PNG 640w ,https://titomaxxx90.github.io/make-money-online/media/posts/1/responsive/Kwork1-sm.PNG 768w ,https://titomaxxx90.github.io/make-money-online/media/posts/1/responsive/Kwork1-md.PNG 1024w ,https://titomaxxx90.github.io/make-money-online/media/posts/1/responsive/Kwork1-lg.PNG 1366w ,https://titomaxxx90.github.io/make-money-online/media/posts/1/responsive/Kwork1-xl.PNG 1600w ,https://titomaxxx90.github.io/make-money-online/media/posts/1/responsive/Kwork1-2xl.PNG 1920w">
-      
-    </figure>
-
-  <p>
-    ## Как я начал фриланс в 35 лет и вышел на первые заказы на WordPress
-<br>
-<br>В 35 лет я решил кардинально изменить подход к работе и попробовать себя во фрилансе. До этого был обычный опыт работы, но хотелось большей свободы, развития и возможности напрямую работать с клиентами.
-<br>
-<br>Я выбрал направление разработки сайтов — в первую очередь **WordPress**, а также другие популярные CMS. Это оказалось логичным шагом, потому что рынок большой, спрос стабильный, а вход в профессию относительно доступный при наличии базовых навыков.
-<br>
-<br>###&nbsp; С чего я начал
-<br>
-<br>Первые шаги были простыми:
-<br>
-<br>* Регистрация на фриланс-платформе (например, Kwork)
-<br>* Оформление профиля и портфолио
-<br>* Публикация услуг по переносу сайта на WordPress, доработке и настройке сайтов
-<br>* Подача откликов на небольшие и недорогие задачи
-<br>
-<br>Я специально не гнался сразу за крупными проектами. Важно было получить первые заказы и первые отзывы.
-<br>
-<br>###&nbsp; Первые деньги
-<br>
-<br>Первый заработок пришёл с простых задач — перенос сайта с одной платформы на WordPress, настройка шаблона, исправление ошибок в верстке и функционале.
-<br>
-<br>Суммы были небольшие, но для меня это был важный момент — первые реальные деньги именно как фрилансера. Главное, что я получил:
-<br>
-<br>* Опыт работы с реальными клиентами
-<br>* Понимание требований бизнеса
-<br>* Отзывы, которые усилили профиль
-<br>* Уверенность, что направление выбрано правильно
-<br>
-<br>###&nbsp; Чем я занимаюсь сейчас
-<br>
-<br>Со временем я начал работать не только с WordPress, но и с другими CMS. Сейчас могу выполнять:
-<br>
-<br>* Перенос сайтов между платформами
-<br>* Разработку сайтов с нуля
-<br>* Доработку готовых проектов
-<br>* Настройку интернет-магазинов
-<br>* Исправление ошибок и оптимизацию
-<br>
-<br>Постепенно появляются более сложные и интересные проекты, а доход становится стабильнее.
-<br>
-<br>###&nbsp; Вывод
-<br>
-<br>Начать в 35 лет — не поздно. Наоборот, у меня уже был опыт, дисциплина и понимание ответственности перед клиентами.
-<br>
-<br>Фриланс дал мне возможность расти, учиться и зарабатывать параллельно.
-<br>
-<br>И если ты думаешь начинать — просто сделай первый шаг. Первые проекты могут быть маленькими, но именно они открывают дорогу к большим.&nbsp;<br>
-  </p>
             ]]>
         </content>
     </entry>
